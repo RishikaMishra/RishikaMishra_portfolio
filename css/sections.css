@@ -1,0 +1,36 @@
+/* Section Styles */
+section {
+    padding: 100px 5% 80px;
+    position: relative;
+}
+
+section:nth-child(odd) {
+    background: var(--section-bg);
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section specific margins */
+.about,
+.skills,
+.experience,
+.projects,
+.contact {
+    margin-top: 2rem;
+}
+
+/* Add purple glow to sections */
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--gradient-1);
+    filter: blur(2px);
+}

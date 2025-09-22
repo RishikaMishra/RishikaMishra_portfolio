@@ -1,0 +1,281 @@
+/* PC Setup Animation Styles */
+.hero-animation {
+    position: absolute;
+    right: calc(5% + 70px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45%;
+    height: 80vh;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.pc-setup {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Monitor */
+.monitor {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    width: 400px;
+    height: 280px;
+    background: var(--card-bg);
+    border-radius: 10px;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 30px rgba(157, 78, 221, 0.3);
+    animation: float 6s ease-in-out infinite;
+}
+
+.monitor-screen {
+    position: relative;
+    margin: 10px;
+    height: calc(100% - 40px);
+    background: rgba(10, 10, 20, 0.95);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+.monitor-stand {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 30px;
+    background: var(--primary-color);
+    border-radius: 0 0 10px 10px;
+}
+
+/* Code Container */
+.code-container {
+    padding: 15px;
+    padding-top: 10px;
+    font-family: 'Consolas', monospace;
+    font-size: 14px;
+    color: var(--accent-color);
+    white-space: pre;
+    overflow: hidden;
+}
+
+.code-line {
+    margin: 5px 0;
+    opacity: 0.8;
+    position: relative;
+    overflow: hidden;
+    height: 16px;
+    line-height: 16px;
+}
+
+.code-line::before {
+    position: absolute;
+    animation: typing 5s steps(30) infinite;
+}
+
+.code-line:nth-child(1)::before {
+    content: "function initPortfolio() {";
+    color: var(--primary-color);
+}
+
+.code-line:nth-child(2)::before {
+    content: "   const skills = ['JavaScript', 'Python', 'React'];";
+    color: #9D4EDD;
+    animation-delay: 1s;
+}
+
+.code-line:nth-child(3)::before {
+    content: "   return createAwesomeProjects(skills);";
+    color: #C77DFF;
+    animation-delay: 2s;
+}
+
+.code-line:nth-child(4)::before {
+    content: "}";
+    color: var(--primary-color);
+    animation-delay: 3s;
+}
+
+.cursor {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 2px;
+    height: 15px;
+    background: var(--primary-color);
+    animation: blink 1s infinite;
+}
+
+/* Keyboard */
+.keyboard {
+    position: absolute;
+    bottom: 15%;
+    right: 10%;
+    width: 380px;
+    height: 30px;
+    background: var(--card-bg);
+    border-radius: 5px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.2);
+}
+
+.key {
+    position: absolute;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background: rgba(157, 78, 221, 0.3);
+    border-radius: 3px;
+    animation: keypress 1.5s infinite;
+}
+
+.key:nth-child(1) { left: 30%; animation-delay: 0s; }
+.key:nth-child(2) { left: 45%; animation-delay: 0.2s; }
+.key:nth-child(3) { left: 60%; animation-delay: 0.4s; }
+
+/* Mouse */
+.mouse {
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+    width: 25px;
+    height: 40px;
+    background: var(--card-bg);
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Coffee Cup */
+.coffee-cup {
+    position: absolute;
+    bottom: 15%;
+    right: 70%;
+    width: 30px;
+    height: 35px;
+    background: var(--card-bg);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px 5px 10px 10px;
+}
+
+.steam {
+    position: absolute;
+    top: -15px;
+    left: 5px;
+    width: 20px;
+    height: 10px;
+    animation: steam 2s infinite;
+}
+
+/* Floating Elements */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.floating-elements > div {
+    position: absolute;
+    color: var(--accent-color);
+    font-size: 24px;
+    opacity: 0.6;
+    animation: float 4s ease-in-out infinite;
+}
+
+.bracket:nth-child(1) { top: 20%; left: 10%; animation-delay: 0.5s; }
+.bracket:nth-child(2) { top: 40%; right: 5%; animation-delay: 1s; }
+.semicolon { top: 60%; left: 20%; animation-delay: 1.5s; }
+.tag { top: 30%; right: 25%; animation-delay: 2s; }
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes typing {
+    0% { 
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    35% { 
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    90% {
+        opacity: 1;
+    }
+    100% { 
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        opacity: 0;
+    }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes codeLine {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes keypress {
+    0%, 100% { transform: translateY(0); background: rgba(157, 78, 221, 0.3); }
+    50% { transform: translateY(-2px); background: rgba(157, 78, 221, 0.6); }
+}
+
+@keyframes steam {
+    0%, 100% {
+        height: 10px;
+        opacity: 0.8;
+    }
+    50% {
+        height: 15px;
+        opacity: 0;
+    }
+}
+
+/* Glow Effects */
+.monitor::after,
+.keyboard::after,
+.mouse::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    box-shadow: 0 0 30px rgba(157, 78, 221, 0.3);
+    z-index: -1;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .monitor {
+        width: 340px;
+        height: 220px;
+    }
+    
+    .keyboard {
+        width: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-animation {
+        opacity: 0.3;
+        width: 100%;
+        right: 0;
+    }
+}

@@ -1,0 +1,85 @@
+/* Animated Elements */
+
+/* Floating Shapes */
+.floating-shape {
+    position: absolute;
+    opacity: 0.15;
+    pointer-events: none;
+    filter: blur(1px);
+}
+
+.floating-shape.circle {
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+}
+
+.floating-shape.square {
+    border: 3px solid var(--accent-color);
+    transform: rotate(45deg);
+}
+
+.floating-shape.triangle {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 43.3px solid var(--secondary-color);
+}
+
+/* Code Particles */
+.code-particle {
+    position: absolute;
+    color: var(--accent-color);
+    opacity: 0.2;
+    font-family: 'Consolas', monospace;
+    pointer-events: none;
+}
+
+/* Glow Effects */
+.glow-effect {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: var(--gradient-1);
+    filter: blur(80px);
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+/* Animations */
+@keyframes floatUpDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes floatLeftRight {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(20px); }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.1; }
+    50% { transform: scale(1.2); opacity: 0.2; }
+}
+
+/* Animation Classes */
+.float-up-down {
+    animation: floatUpDown 6s ease-in-out infinite;
+}
+
+.float-left-right {
+    animation: floatLeftRight 8s ease-in-out infinite;
+}
+
+.rotate {
+    animation: rotate 12s linear infinite;
+}
+
+.pulse {
+    animation: pulse 4s ease-in-out infinite;
+}

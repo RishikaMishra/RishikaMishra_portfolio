@@ -1,0 +1,113 @@
+/* Additional Section Animations */
+
+/* Section Entry Animations */
+.section-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+.section-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Skill Card Hover Effects */
+.skill-category {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-category::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-1);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.skill-category:hover::before {
+    opacity: 0.1;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+}
+
+/* Project Card Animations */
+.project-card {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.project-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-accent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    filter: blur(15px);
+}
+
+.project-card:hover::after {
+    opacity: 0.15;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+/* Button Hover Effects */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    opacity: 0.2;
+}
+
+/* Interactive Animations on Scroll */
+[data-aos] {
+    opacity: 0;
+    transition-property: all;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+/* Floating Animation for Section Elements */
+.section-float {
+    animation: sectionFloat 6s ease-in-out infinite;
+}
+
+@keyframes sectionFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
